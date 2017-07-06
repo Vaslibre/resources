@@ -70,10 +70,10 @@
                     </div>
                     <div class="collapse navbar-collapse" id="navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="{{ route('home') }}" class="smooth-scroll">Inicio</a></li>
-                            <li><a href="{{ route('nosotros') }}" class="smooth-scroll">Nosotros</a></li>
-                            <li><a href="" class="smooth-scroll">Galería</a></li>
-                            <li><a href="" class="smooth-scroll">Publicaciones</a></li>
+                            <li><a href="{{ route('home') }}">Inicio</a></li>
+                            <li><a href="{{ route('nosotros') }}">Nosotros</a></li>
+                            <li><a href="">Galería</a></li>
+                            <li><a href="{{ route('notas') }}">Publicaciones</a></li>
                             <li><a href="" class="btn-nav btn-green smooth-scroll">Contacto</a></li>
                         </ul>
                     </div>
