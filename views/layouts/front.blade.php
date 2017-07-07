@@ -70,11 +70,31 @@
                     </div>
                     <div class="collapse navbar-collapse" id="navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="{{ route('home') }}">Inicio</a></li>
-                            <li><a href="{{ route('nosotros') }}">Nosotros</a></li>
-                            <li><a href="">Galería</a></li>
-                            <li><a href="{{ route('notas') }}">Publicaciones</a></li>
-                            <li><a href="" class="btn-nav btn-green smooth-scroll">Contacto</a></li>
+                            <li {{ ($current == 'home' ? 'class=active' : '') }} >
+                                <a href="{{ route('home') }}">
+                                    Inicio
+                                </a>
+                            </li>
+                            <li {{ ($current == 'nosotros' ? 'class=active' : '') }} >
+                                <a href="{{ route('nosotros') }}">
+                                    Nosotros
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Galería
+                                </a>
+                            </li>
+                            <li {{ ($current == 'notas' ? 'class=active' : '') }}>
+                                <a href="{{ route('notas') }}">
+                                    Publicaciones
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="btn-nav btn-green smooth-scroll">
+                                    Contacto
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -139,7 +159,46 @@
     <script src="{{ asset('js/plugins/picker.js') }}"></script>
     <script src="{{ asset('js/plugins/picker.date.js') }}"></script>
     <!-- Custom Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js" integrity="sha256-RWiU4omUU7tQ2M3wmRQNW9UL50MB4CucbRPCbsQv+X0=" crossorigin="anonymous"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
+    <script>
+        jQuery(document).ready(function($) {
+            // Set the Options for "Bloodhound" suggestion engine
+            var engine = new Bloodhound({
+                remote: {
+                    url: '/find?q=%QUERY%',
+                    wildcard: '%QUERY%'
+                },
+                datumTokenizer: Bloodhound.tokenizers.whitespace('q'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace
+            });
+
+            $(".search-input").typeahead({
+                hint: true,
+                highlight: true,
+                minLength: 1
+            }, {
+                source: engine.ttAdapter(),
+
+                // This will be appended to "tt-dataset-" to form the class name of the suggestion menu.
+                name: 'postList',
+
+                // the key from the array we want to display (name,id,email,etc...)
+                templates: {
+                    empty: [
+                        '<div class="list-group search-results-dropdown"><div class="list-group-item">Nothing found.</div></div>'
+                    ],
+                    header: [
+                        '<div class="list-group search-results-dropdown">'
+                    ],
+                    suggestion: function (data) {
+                        return '<a href="/blog/'+ data.url + '" class="list-group-item">' + data.titulo +  '</a>'
+                        console.log(data);
+                    }
+                }
+            });
+        });
+    </script>    
 </body>
 
 </html>
