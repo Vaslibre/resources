@@ -36,7 +36,7 @@
                             </p>
                         </blockquote>
 
-                        {!! $nota->texto !!}
+                        <a href="{{ asset('/publicaciones/'. $nota->publicacion ) }}" target="_parent">Descargar Material</a>
                     </div>
                 </div>
 
@@ -45,10 +45,10 @@
                         <h5 class="m-b-md">Share this post</h5>
                     </div>
                     <div class="w-social social-btn">
-                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('blog', $nota->url) }}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" class="sb-facebook">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('notas', $nota->url) }}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" class="sb-facebook">
                             <i class="fa fa-facebook"></i>
                         </a>
-                        <a href="https://twitter.com/share?text={{ $nota->titulo }}&amp;url={{ route('blog', $nota->url) }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"class="sb-twitter">
+                        <a href="https://twitter.com/share?text={{ $nota->titulo }}&amp;url={{ route('notas', $nota->url) }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"class="sb-twitter">
                             <i class="fa fa-twitter"></i>
                         
                         </a>                        
@@ -60,7 +60,7 @@
                     @if($previous)
                         <div class="col-sm-{{ !$next ? '12' : '6' }}">
                             <div class="prev-post text-left">
-                                <a href="{{ route('blog', $previous->url) }}">
+                                <a href="{{ route('notas', $previous->url) }}">
                                     <p>
                                         {{ $previous->titulo }}
                                         <span>
@@ -75,7 +75,7 @@
                     @if($next)
                         <div class="col-sm-{{ !$previous ? '12' : '6' }}">
                             <div class="next-post text-right">
-                                <a href="{{ route('blog', $next->url) }}">
+                                <a href="{{ route('notas', $next->url) }}">
                                     <p>
                                         {{ $next->titulo }}
                                         <span>

@@ -23,11 +23,9 @@
                         </h5>
                     </div>
                     <div class="w-social social-btn">
-                        <a href="#" class="sb-facebook"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="sb-instagram"><i class="fa fa-instagram"></i></a>
-                        <a href="#" class="sb-linkedin"><i class="fa fa-linkedin"></i></a>
-                        <a href="#" class="sb-twitter"><i class="fa fa-twitter"></i></a>
-                        <a href="#" class="sb-pinterest"><i class="fa fa-pinterest"></i></a>
+                        <a href="http://www.facebook.com/group.php?gid=26465149152" target="_blank" class="sb-facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="http://www.instagram.com/vaslibre"  target="_blank"  class="sb-instagram"><i class="fa fa-instagram"></i></a>
+                        <a href="http://www.twitter.com/vaslibre"  target="_blank" class="sb-twitter"><i class="fa fa-twitter"></i></a>
                     </div>
                 </div>
                 <div class="widget">
@@ -58,5 +56,5 @@
                             planeta vaslibre
                         </h5>
                     </div>                    
-                    <img src="http://planeta.vaslibre.org.ve/img/planeta_vaslibre_rss_200x200.png" class="img-responsive m-b" alt="VaSLibre">
+                    <img src="https://planeta.vaslibre.org.ve/img/planeta_vaslibre_rss_200x200.png" class="img-responsive m-b" alt="VaSLibre">
                 </div>   

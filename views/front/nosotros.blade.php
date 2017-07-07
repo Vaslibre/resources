@@ -1,4 +1,7 @@
-@extends('layouts.front') @section('content')
+@extends('layouts.front') 
+
+@section('title', 'Nosotros')
+@section('content')
 <section class="p-y-md">
     <div class="container">
         <div class="row">

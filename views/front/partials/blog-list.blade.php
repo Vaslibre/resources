@@ -16,6 +16,6 @@
             </li>
         </ul>
         <p>{!! $item->intro !!}</p>
-        <a href="" class="btn btn-blue m-t"> Continue Reading</a>
+        <a href="{{ route($url, $item->url) }}" class="btn btn-blue m-t"> Leer la publicación completa</a>
     </div>
 </div>

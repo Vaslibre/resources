@@ -1,5 +1,6 @@
 @extends('layouts.front')
 
+@section('title','Publicaciones')
 @section('content')
 <section class="p-y-md">
     <div class="container">
