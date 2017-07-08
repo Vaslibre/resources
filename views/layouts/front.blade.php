@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{ asset('css/plugins/pickadate-default.date.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.5/sweetalert2.min.css" integrity="sha256-fmdDIg1KI3wbdH0gfFQGXexodQ3SQzBTHDGicLAgje8=" crossorigin="anonymous" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/favicon-32x32.png') }}">
@@ -136,6 +137,7 @@ img:before {
     <script src="{{ asset('js/plugins/bootstrap.min.js') }}"></script>
     <!-- Custom Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js" integrity="sha256-RWiU4omUU7tQ2M3wmRQNW9UL50MB4CucbRPCbsQv+X0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.5/sweetalert2.min.js" integrity="sha256-xofl41Tt0WRg2Q0LrntvSB6qv1Mzz/ZLvSyi+O08d1g=" crossorigin="anonymous"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
     <script>
         jQuery(document).ready(function($) {
@@ -174,7 +176,8 @@ img:before {
                 }
             });
         });
-    </script>    
+    </script>
+    @stack('script')
 </body>
 
 </html>
