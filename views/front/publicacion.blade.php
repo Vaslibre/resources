@@ -16,7 +16,7 @@
             <div class="col-md-8">
                 <div class="blog-list p-b m-b-md">
                     <div class="blog-post">
-                        <div class="date bg-edit text-edit">
+                        <div class="date">
                             {{ $nota->created_at->format('d') }}
                             <span>{{ $nota->created_at->format('M Y') }}</span>
                         </div>
@@ -35,11 +35,9 @@
                                 {!! $nota->intro !!}
                             </p>
                         </blockquote>
-
                         {!! $nota->texto !!}
                     </div>
                 </div>
-
                 <div class="widget text-center">
                     <div class="w-title">
                         <h5 class="m-b-md">Share this post</h5>
@@ -54,7 +52,6 @@
                         </a>                        
                     </div>
                 </div>
-
                 <div class="pagination-row">
                     <div class="pagination-post">
                     @if($previous)

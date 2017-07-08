@@ -107,6 +107,14 @@ img:before {
 .js-cookie-consent.cookie-consent {position: fixed;bottom: 0;margin: 0;padding: 20px;text-align: center;width: 100%;background-color: #f0f2f1;z-index: 9}span.cookie-consent__message {color: #1F1F21;}button.js-cookie-consent-agree {border: none;border-radius: 3px;background: #f4645f;padding: 10px 15px;font-size: 16px;color: #fff;}
 </style>
 @stack('css')
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-8727599-3', 'auto');
+  ga('send', 'pageview');
+</script>
 </head>
 
 <body data-spy="scroll" data-target="#main-navbar">
@@ -118,52 +126,7 @@ img:before {
         </div>
     </div>
     <div class="main-container" id="page">
-        <header id="nav1-1">
-            <nav class="navbar navbar-fixed-top" id="main-navbar" role="navigation">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a href="{{ route('home') }}" class="navbar-brand smooth-scroll">
-                            <img src="{{ asset('imagenes/logo-black.png') }}" alt="logo">
-                        </a>
-                    </div>
-                    <div class="collapse navbar-collapse" id="navbar-collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li {{ ($current == 'home' ? 'class=active' : '') }} >
-                                <a href="{{ route('home') }}">
-                                    Inicio
-                                </a>
-                            </li>
-                            <li {{ ($current == 'nosotros' ? 'class=active' : '') }} >
-                                <a href="{{ route('nosotros') }}">
-                                    Nosotros
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    Galería
-                                </a>
-                            </li>
-                            <li {{ ($current == 'notas' ? 'class=active' : '') }}>
-                                <a href="{{ route('notas') }}">
-                                    Publicaciones
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="btn-nav btn-green smooth-scroll">
-                                    Contacto
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
+    @include('front.partials.header')
         @yield('content')
         <footer id="footer6-2" class="footer f6 p-y-md bg-edit bg-dark">
         </footer>
@@ -171,17 +134,6 @@ img:before {
     </div>
     <script src="{{ asset('js/plugins/jquery1.11.2.min.js') }}"></script>
     <script src="{{ asset('js/plugins/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/plugins/jquery.easing.1.3.min.js') }}"></script>
-    <script src="{{ asset('js/plugins/jquery.countTo.js') }}"></script>
-    <script src="{{ asset('js/plugins/jquery.formchimp.min.js') }}"></script>
-    <script src="{{ asset('js/plugins/jquery.jCounter-0.1.4.js') }}"></script>
-    <script src="{{ asset('js/plugins/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('js/plugins/jquery.vide.min.js') }}"></script>
-    <script src="{{ asset('js/plugins/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('js/plugins/twitterFetcher_min.js') }}"></script>
-    <script src="{{ asset('js/plugins/wow.min.js') }}"></script>
-    <script src="{{ asset('js/plugins/picker.js') }}"></script>
-    <script src="{{ asset('js/plugins/picker.date.js') }}"></script>
     <!-- Custom Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js" integrity="sha256-RWiU4omUU7tQ2M3wmRQNW9UL50MB4CucbRPCbsQv+X0=" crossorigin="anonymous"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
