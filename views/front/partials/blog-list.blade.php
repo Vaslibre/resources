@@ -8,9 +8,6 @@
                 <a href="#0">{{ $item->postea }}</a>
             </li>
             <li class="text-edit">
-                <i class="fa fa-comments"></i> <a href="#">4 comments</a>
-            </li>
-            <li class="text-edit">
                 <i class="fa fa-clock-o" aria-hidden="true"></i> 
                 {{ $item->created_at->format('d M Y') }}
             </li>
