@@ -18,6 +18,9 @@
     <meta name="description" content="Grupo de usuarios de Software Libre Valencia - Carabobo - Venezuela. Difundiendo el uso de tecnologia libre. " />
 
 @endpush
+@push('css')
+<style>.blog-post{margin-bottom: 20px;}</style>
+@endpush
 @section('content')
 <section class="p-y-md">
     <div class="container">

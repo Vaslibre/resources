@@ -15,4 +15,5 @@
         <p>{!! $item->intro !!}</p>
         <a href="{{ route($url, $item->url) }}" class="btn btn-blue m-t"> Leer la publicación completa</a>
     </div>
+    @include('front.partials.banner')
 </div>
