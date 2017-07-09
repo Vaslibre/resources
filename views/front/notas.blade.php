@@ -6,9 +6,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-            @foreach($result as $item)
-                @include('front.partials.blog-list', ['item' => $item, 'url' => 'notas'])
-            @endforeach
+                @foreach($result as $item)
+                    @include('front.partials.blog-list', ['item' => $item, 'url' => 'notas'])
+                @endforeach
                 <div class="text-center">
                     {!! $result->links() !!}
                 </div>

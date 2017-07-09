@@ -1,14 +1,11 @@
 @extends('layouts.front')
-
 @section('title', $nota->titulo)
 @push('metas')
 @include('front.partials.meta')
 @endpush
 @section('content')
 @push('css')
-<style>.pagination-row {
-    padding-bottom: 30px;
-}</style>
+<style>.pagination-row{padding-bottom: 30px;}.disqus-placeholder.is-hidden{display:none;}</style>
 @endpush
 <section class="p-y-md">
     <div class="container">
@@ -24,10 +21,14 @@
                             {{ $nota->titulo }}
                         </h4>
                         <ul class="post-meta">
-                            <li class="text-edit">
+                            <li>
                                 <i class="fa fa-user"></i>
                                 Enviado por:
                                 <a href="#0">{{ $nota->postea }}</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-comments"></i> 
+                                <a href="#disqus_thread"></a>
                             </li>
                         </ul>
                         <blockquote class="quote-post">
@@ -36,20 +37,28 @@
                             </p>
                         </blockquote>
                         {!! $nota->texto !!}
-                    </div>
+                    </div><br>
+                    @include('front.partials.banner')
                 </div>
                 <div class="widget text-center">
                     <div class="w-title">
-                        <h5 class="m-b-md">Share this post</h5>
+                        <h5 class="m-b-md">
+                            comparte esta publicación
+                        </h5>
                     </div>
-                    <div class="w-social social-btn">
-                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('blog', $nota->url) }}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" class="sb-facebook">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                        <a href="https://twitter.com/share?text={{ $nota->titulo }}&amp;url={{ route('blog', $nota->url) }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"class="sb-twitter">
-                            <i class="fa fa-twitter"></i>
-                        
-                        </a>                        
+                    <div class="widget-social-icons">
+                        <ul class="social-icons list-unstyled text-center">   
+                            <li>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('blog', $nota->url) }}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" class="social-icon"> 
+                                    <i class="fa fa-facebook fa-border fa-2x"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('blog', $nota->url) }}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" class="social-icon"> 
+                                    <i class="fa fa-twitter fa-border fa-2x"></i>
+                                </a>
+                            </li>
+                        </ul>                    
                     </div>
                 </div>
                 <div class="pagination-row">
@@ -86,6 +95,16 @@
                     @endif
                     </div>
                 </div>
+                <div class="widget text-left m-t-lg">
+                    <div class="w-title">
+                        <h5 class="m-b-md">
+                            únete a la discusión
+                        </h5>
+                    </div>
+                    <div id="disqus_thread"></div>
+                    <div class="disqus-placeholder">Loading comments...</div>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank">comments powered by Disqus.</a></noscript>
+                </div>                                            
             </div>
             <div class="col-md-4">
                 @include('front.partials.widgets.widgets')
@@ -94,3 +113,19 @@
     </div>
 </section>
 @endsection
+@push('script')
+<script src="{{ asset('js/jquery.disqusloader.js') }}"></script>
+<script>
+$.disqusLoader( '#disqus_thread', {
+    scriptUrl:		'https://vaslibre.disqus.com/embed.js',
+	disqusConfig:	function() {
+        this.page.identifier 	= '{{ $nota->id }}';
+		this.page.url			= "{{ route('blog', $nota->url) }}";
+		this.page.title			= '{{ $nota->titulo }}';
+        this.callbacks.onReady  = [function() {
+            $( '.disqus-placeholder' ).addClass( 'is-hidden' );
+        }];
+	}
+});
+</script>
+@endpush

@@ -26,7 +26,6 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-
             @foreach($result as $item)
                 @include('front.partials.blog-list', ['item' => $item, 'url' => 'blog'])
             @endforeach
@@ -35,7 +34,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-            @include('front.partials.widgets.widgets')           
+            @include('front.partials.widgets.widgets')
             </div>
         </div>
     </div>

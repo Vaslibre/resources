@@ -22,11 +22,30 @@
                             nuestras redes
                         </h5>
                     </div>
-                    <div class="w-social social-btn">
-                        <a href="http://www.facebook.com/group.php?gid=26465149152" target="_blank" class="sb-facebook"><i class="fa fa-facebook"></i></a>
-                        <a href="http://www.instagram.com/vaslibre"  target="_blank"  class="sb-instagram"><i class="fa fa-instagram"></i></a>
-                        <a href="http://www.twitter.com/vaslibre"  target="_blank" class="sb-twitter"><i class="fa fa-twitter"></i></a>
-                    </div>
+                    <div class="widget-social-icons">
+                        <ul class="social-icons list-unstyled text-center">   
+                            <li>
+                                <a href="" class="social-icon"> 
+                                    <i class="fa fa-facebook fa-border fa-2x"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="social-icon"> 
+                                    <i class="fa fa-twitter fa-border fa-2x"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="social-icon"> 
+                                    <i class="fa fa-rss fa-border fa-2x"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="social-icon"> 
+                                    <i class="fa fa-github-alt fa-border fa-2x" aria-hidden="true"></i>
+                                </a>
+                            </li>
+                        </ul>                    
+                    </div>                   
                 </div>
                 <div class="widget">
                     <div class="w-title">
