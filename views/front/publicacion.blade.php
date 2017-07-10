@@ -26,10 +26,6 @@
                                 Enviado por:
                                 <a href="#0">{{ $nota->postea }}</a>
                             </li>
-                            <li>
-                                <i class="fa fa-comments"></i> 
-                                <a href="#disqus_thread"></a>
-                            </li>
                         </ul>
                         <blockquote class="quote-post">
                             <p>

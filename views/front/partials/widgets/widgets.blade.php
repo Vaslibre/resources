@@ -25,22 +25,22 @@
                     <div class="widget-social-icons">
                         <ul class="social-icons list-unstyled text-center">   
                             <li>
-                                <a href="" class="social-icon"> 
+                                <a href="https://www.facebook.com/groups/26465149152/" target="_blank" class="social-icon"> 
                                     <i class="fa fa-facebook fa-border fa-2x"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="" class="social-icon"> 
+                                <a href="https://twitter.com/vaslibre" target="_blank" class="social-icon"> 
                                     <i class="fa fa-twitter fa-border fa-2x"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="" class="social-icon"> 
+                                <a href="http://feeds.feedburner.com/Vaslibre" target="_blank" class="social-icon"> 
                                     <i class="fa fa-rss fa-border fa-2x"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="" class="social-icon"> 
+                                <a href="https://github.com/vaslibre" target="_blank" class="social-icon"> 
                                     <i class="fa fa-github-alt fa-border fa-2x" aria-hidden="true"></i>
                                 </a>
                             </li>

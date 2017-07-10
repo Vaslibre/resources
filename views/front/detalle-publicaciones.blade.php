@@ -6,9 +6,7 @@
 @endpush
 @section('content')
 @push('css')
-<style>.pagination-row {
-    padding-bottom: 30px;
-}</style>
+<style>.pagination-row {padding-bottom: 30px;}</style>
 @endpush
 <section class="p-y-md">
     <div class="container">
@@ -35,26 +33,30 @@
                                 {!! $nota->intro !!}
                             </p>
                         </blockquote>
-
                         <a href="{{ asset('/publicaciones/'. $nota->publicacion ) }}" target="_parent">Descargar Material</a>
                     </div>
                 </div>
-
                 <div class="widget text-center">
                     <div class="w-title">
-                        <h5 class="m-b-md">Share this post</h5>
+                        <h5 class="m-b-md">
+                            comparte esta publicación
+                        </h5>
                     </div>
-                    <div class="w-social social-btn">
-                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('notas', $nota->url) }}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" class="sb-facebook">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                        <a href="https://twitter.com/share?text={{ $nota->titulo }}&amp;url={{ route('notas', $nota->url) }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"class="sb-twitter">
-                            <i class="fa fa-twitter"></i>
-                        
-                        </a>                        
+                    <div class="widget-social-icons">
+                        <ul class="social-icons list-unstyled text-center">   
+                            <li>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('notas', $nota->url) }}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" class="social-icon"> 
+                                    <i class="fa fa-facebook fa-border fa-2x"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ route('notas', $nota->url) }}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" class="social-icon"> 
+                                    <i class="fa fa-twitter fa-border fa-2x"></i>
+                                </a>
+                            </li>
+                        </ul>                    
                     </div>
                 </div>
-
                 <div class="pagination-row">
                     <div class="pagination-post">
                     @if($previous)

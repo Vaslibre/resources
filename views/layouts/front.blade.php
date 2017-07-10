@@ -75,7 +75,7 @@
     <meta name="twitter:site" content="@vaslibre">
     <meta property="og:site_name" content="Vaslibre">
     <meta property="og:locale" content="{{ app()->getLocale() }}">
-    <link rel="alternate" href="{{ route('rss') }}" title="My RSS feed" type="application/rss+xml" />
+    <link rel="alternate" href="http://feeds.feedburner.com/Vaslibre" title="My RSS feed" type="application/rss+xml" />
     @stack('metas')
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -86,6 +86,7 @@
     ga('create', 'UA-8727599-3', 'auto');
     ga('send', 'pageview');
     </script>
+    <style>.footer a {color: #fff;}</style>
 </head>
 <body data-spy="scroll" data-target="#main-navbar">
     <div class="loader bg-white">
@@ -98,7 +99,20 @@
     <div class="main-container" id="page">
     @include('front.partials.header')
         @yield('content')
-        <footer id="footer6-2" class="footer f6 p-y-md bg-edit bg-dark">
+        <footer id="footer1-2" class="p-y-md footer f1 bg-edit bg-green">
+            <div class="container">
+                <div class="row text-white">
+                    <div class="col-sm-6 col-xs-12">
+                        <p>
+                            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                                <img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" />
+                            </a>
+                            <br />Esta obra está bajo una 
+                            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"> Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional</a>
+                        </p>
+                    </div>
+                </div><!-- /End Row -->
+            </div><!-- /End Container -->
         </footer>
         <a href="#" class="top btn-green">Top</a>
     </div>
@@ -138,7 +152,6 @@
             });
         });
     </script>
-    <script id="dsq-count-scr" src="https://vaslibre.disqus.com/count.js" async></script>
     @stack('script')
 </body>
 </html>
