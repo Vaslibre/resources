@@ -120,6 +120,7 @@
     <script src="{{ asset('js/plugins/bootstrap.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js" integrity="sha256-RWiU4omUU7tQ2M3wmRQNW9UL50MB4CucbRPCbsQv+X0=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.5/sweetalert2.min.js" integrity="sha256-xofl41Tt0WRg2Q0LrntvSB6qv1Mzz/ZLvSyi+O08d1g=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.6/sweetalert2.min.js" integrity="sha256-NBMm26+MVgnPpBR/jdmM0orRevP7j26HoHC3IPW/T+k=" crossorigin="anonymous"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
     <script>
         jQuery(document).ready(function($) {
@@ -153,5 +154,19 @@
         });
     </script>
     @stack('script')
+    @if (notify()->ready())
+    <script>
+        swal({
+            title: "{!! notify()->message() !!}",
+            text: "{!! notify()->option('text') !!}",
+            type: "{{ notify()->type() }}",
+            @if (notify()->option('timer'))
+                timer: {{ notify()->option('timer') }},
+                showConfirmButton: false
+            @endif
+        }).done();
+    </script>
+    {{ Session::forget(notify()->message()) }}
+    @endif
 </body>
 </html>

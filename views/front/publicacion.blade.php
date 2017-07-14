@@ -24,7 +24,7 @@
                             <li>
                                 <i class="fa fa-user"></i>
                                 Enviado por:
-                                <a href="#0">{{ $nota->postea }}</a>
+                                <a href="#0">{{ $nota->user->name }}</a>
                             </li>
                         </ul>
                         <blockquote class="quote-post">

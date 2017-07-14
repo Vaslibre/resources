@@ -25,7 +25,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a href="#0">
                                     Galería
                                 </a>
                             </li>
@@ -39,7 +39,58 @@
                                     Contacto
                                 </a>
                             </li>
-                        </ul>
+                            @if(Auth::check())
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opciones<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    @if (Auth::user()->hasRole('Admin'))
+                                    <li>
+                                        <a href="#0">
+                                            Administrar Usuarios
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#0">
+                                            Administrar Blog
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('roles.index') }}">
+                                            Manage Roles & Permissions
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#0">
+                                            Google Analytics
+                                        </a>
+                                    </li>
+                                    @endif
+                                    @if (Auth::user()->hasRole('Blog'))
+                                    <li>
+                                        <a href="#0">
+                                            Agregar una publicación al Blog
+                                        </a>
+                                    </li>
+                                    @endif
+                                    @if (Auth::user()->hasRole('User'))
+                                    <li>
+                                        <a href="#0">
+                                            Mi perfil
+                                        </a>
+                                    </li>
+                                    @endif
+                                    <li>
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>                                
+                            @endif
+                        </ul>                       
                     </div>
                 </div>
             </nav>

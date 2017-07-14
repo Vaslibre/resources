@@ -10,7 +10,9 @@
                 <li class="text-edit">
                     <i class="fa fa-user"></i>
                     Enviado por:
-                    <a href="#0">{{ $item->postea }}</a>
+                    <a href="{{ url('profile/'.$item->user->nickname) }}">
+                        {{ $item->user->name }}
+                    </a>
                 </li>
                 <li class="text-edit">
                     <i class="fa fa-clock-o" aria-hidden="true"></i> 
