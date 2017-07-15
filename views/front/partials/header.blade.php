@@ -77,7 +77,7 @@
                                         <a href="{{ url('profile/'.Auth::user()->nickname) }}">
                                             Mi perfil
                                         </a>
-                                    </li>
+                                    </li>                                  
                                     @endif
                                     <li>
                                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

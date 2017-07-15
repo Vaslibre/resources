@@ -169,16 +169,6 @@
         }).done();
     </script>
     {{ Session::forget(notify()->message()) }}
-    @endif
-@if(Auth::check() && Auth::user()->nickname == null)
-
-@include('front.profile.partials.modal')
-<script>
-    setTimeout(function(){
-        $('#myModal').modal('show');
-    }, 5000);
-</script>
-@endif
-
+    @endif    
 </body>
 </html>

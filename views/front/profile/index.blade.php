@@ -34,6 +34,13 @@ body{background-color:#f0f0f0;}.panel{border-radius:0;}.btn,a.btn{white-space:in
                         <h1 class="panel-title pull-left" style="font-size:30px;">
                             {{ $result->name }}
                         </h1>
+                    @if(Auth::check() && Auth::user()->id == $result->id)
+                        <div class="btn-group pull-right" role="group" aria-label="...">
+                            <a href="#0" type="button"  data-toggle="modal" data-target="#myModal" class="btn btn-success text-capitalize">
+                                editar perfil
+                            </a>
+                        </div>
+                    @endif                        
                     </span>
                     @if(!empty($result->bio))
                     <blockquote class="quote-post">
@@ -80,6 +87,8 @@ body{background-color:#f0f0f0;}.panel{border-radius:0;}.btn,a.btn{white-space:in
         </div>
     </div>
 </div>
+
+@include('front.profile.partials.modal', ['result' => $result])
 </section>
 @endsection
 @push('script')
