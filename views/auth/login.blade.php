@@ -10,9 +10,9 @@
                 <p class="lead text-left center-md m-b-md">ingresa a tu cuenta</p>
                 <div class="form-group">
                     <div class="col-md-12">
-                        <a href="{{ url('/auth/facebook') }}" class="btn btn-block btn-social btn-facebook">
+                        {{-- <a href="{{ url('/auth/facebook') }}" class="btn btn-block btn-social btn-facebook">
                             <i class="fa fa-facebook"></i> Sign in with Facebook
-                        </a>
+                        </a> --}}
                         <a href="{{ url('/auth/google') }}" class="btn btn-block btn-social btn-google-plus">
                             <i class="fa fa-google-plus"></i> Sign in with Google
                         </a>
