@@ -65,16 +65,16 @@
                                         </a>
                                     </li>
                                     @endif
-                                    @if (Auth::user()->hasRole('Blog'))
+                                    @if (Auth::user()->can('add_post', 'edit_post'))
                                     <li>
                                         <a href="#0">
                                             Agregar una publicación al Blog
                                         </a>
                                     </li>
                                     @endif
-                                    @if (Auth::user()->hasRole('User'))
+                                    @if (Auth::user()->can('view_profile', 'edit_profile'))
                                     <li>
-                                        <a href="#0">
+                                        <a href="{{ url('profile/'.Auth::user()->nickname) }}">
                                             Mi perfil
                                         </a>
                                     </li>
