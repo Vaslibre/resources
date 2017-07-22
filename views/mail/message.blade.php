@@ -19,7 +19,7 @@
     {{-- Footer --}}
     @slot('footer')
         @component('mail::footer')
-            © {{ date('Y') }} {{ config('app.name') }}. All rights reserved.
+            © 2005 - {{ date('Y') }} {{ config('app.name') }}.
         @endcomponent
     @endslot
 @endcomponent
