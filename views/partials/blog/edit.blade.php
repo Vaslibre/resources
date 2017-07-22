@@ -20,10 +20,10 @@
                         </h2>                      
                     </span>
                     <hr> 
-                    {!! Form::model($notas, ['route' => 'post.store', 'method' => 'POST', 'button' => 'Crear Publicacion']) !!}
+                    {!! Form::model($notas, ['route' => ['post.update',  $notas->id ], 'method' => 'PUT', 'button' => 'Crear Publicacion']) !!}
                     @include('partials.blog.partials.form')
                     <!-- Submit Form Button -->
-                    {!! Form::submit('Crear Publicación', ['class' => 'btn btn-green']) !!}
+                    {!! Form::submit('Actualizar Publicación', ['class' => 'btn btn-green']) !!}
                     {!! Form::close() !!} 
                 </div>
             </div>

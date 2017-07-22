@@ -67,7 +67,7 @@ body{background-color:#f0f0f0;}.panel{border-radius:0;}.btn,a.btn{white-space:in
                     <div class="panel-body clearfix">
                     @if(Auth::check() && Auth::user()->id == $result->id)
                         <div class="btn-group pull-right" role="group" aria-label="...">
-                            <a href="#{{ $item->id }}" type="button" class="btn btn-success text-capitalize">
+                            <a href="{{ route('post.edit', $item->id) }}" type="button" class="btn btn-success text-capitalize">
                                 editar publicación
                             </a>
                         @if($item->publicado == false)
