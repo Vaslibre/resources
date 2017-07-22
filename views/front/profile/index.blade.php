@@ -36,7 +36,7 @@ body{background-color:#f0f0f0;}.panel{border-radius:0;}.btn,a.btn{white-space:in
                         </h1>
                     @if(Auth::check() && Auth::user()->id == $result->id)
                         <div class="btn-group pull-right" role="group" aria-label="...">
-                            <a href="#0" type="button"  data-toggle="modal" data-target="#myModal" class="btn btn-success text-capitalize">
+                            <a href="{{ route('profile.edit', $result->nickname) }}" type="button"  class="btn btn-success text-capitalize">
                                 editar perfil
                             </a>
                         </div>
@@ -87,18 +87,13 @@ body{background-color:#f0f0f0;}.panel{border-radius:0;}.btn,a.btn{white-space:in
         </div>
     </div>
 </div>
-
-@include('front.profile.partials.modal', ['result' => $result])
 </section>
 @endsection
 @push('script')
 <script>
 $(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
-
-$(function () {
-  $('[data-toggle="popover"]').popover()
+  $('[data-toggle="tooltip"]').tooltip();
+  $('[data-toggle="popover"]').popover();
 })
 </script>
 @endpush

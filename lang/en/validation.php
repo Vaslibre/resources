@@ -100,8 +100,13 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'inputNick' => [
+            'required'  => 'Necesitas indicar tu nick.',
+            'min'       => 'El texto debe ser de al menos :min caracteres.',
+        ],
+        'inputName' => [
+            'required'  => 'Necesitas indicar tu nombre.',
+            'min'       => 'El texto debe ser de al menos :min caracteres.',
         ],
     ],
 
