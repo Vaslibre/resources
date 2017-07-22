@@ -67,7 +67,7 @@
                                     @endif
                                     @if (Auth::user()->can('add_post', 'edit_post'))
                                     <li>
-                                        <a href="#0">
+                                        <a href="{{ route('post.create') }}">
                                             Agregar una publicación al Blog
                                         </a>
                                     </li>

@@ -108,6 +108,15 @@ return [
             'required'  => 'Necesitas indicar tu nombre.',
             'min'       => 'El texto debe ser de al menos :min caracteres.',
         ],
+        'titulo' => [
+            'required'  => 'Es necesario que escribas un título.',
+        ],
+        'intro' => [
+            'required'  => 'Es necesario que escribas una breve introducción.',
+        ],
+        'texto' => [
+            'required'  => 'Es necesario que escribas el contenido de la publicación.',
+        ],
     ],
 
     /*

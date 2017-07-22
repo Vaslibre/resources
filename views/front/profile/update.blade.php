@@ -36,7 +36,7 @@ body{background-color:#f0f0f0;}.panel{border-radius:0;}.btn,a.btn{white-space:in
                         </h1>                      
                     </span>
                     <hr>
-                    @include('partials.error')
+                    @include('partials.error.error')
 {!! Form::model($result, [
     'route'    => ['profile.update', $result->id],
     'method'    => 'put',
