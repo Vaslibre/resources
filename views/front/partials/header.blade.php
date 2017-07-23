@@ -60,7 +60,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#0">
+                                        <a href="{{ route('admin.analytics') }}">
                                             Google Analytics
                                         </a>
                                     </li>
