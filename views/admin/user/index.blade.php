@@ -1,4 +1,4 @@
-@extends('app')
+@extends('layouts.front')
 
 @section('title', 'Users')
 
@@ -24,11 +24,11 @@
             <div class="col-md-5">
                 <h3 class="modal-title">{{ $result->total() }} {{ str_plural('User', $result->count()) }} </h3>
             </div>
-            <div class="col-md-7 page-action text-right">
+            {{--  <div class="col-md-7 page-action text-right">
                 @can('add_users')
                     <a href="{{ route('users.create') }}" class="btn btn-primary btn-sm"> <i class="glyphicon glyphicon-plus-sign"></i> Create</a>
                 @endcan
-            </div>
+            </div>  --}}
             <div class="col-md-12">
                 <div class="result-set">
                     <table class="table table-bordered table-striped table-hover" id="data-table">

@@ -12,13 +12,6 @@
     @if ($errors->has('email')) <p class="help-block">{{ $errors->first('email') }}</p> @endif
 </div>
 
-<!-- password Form Input -->
-<div class="form-group @if ($errors->has('password')) has-error @endif">
-    {!! Form::label('password', 'Password') !!}
-    {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password']) !!}
-    @if ($errors->has('password')) <p class="help-block">{{ $errors->first('password') }}</p> @endif
-</div>
-
 <!-- Roles Form Input -->
 <div class="form-group @if ($errors->has('roles')) has-error @endif">
     {!! Form::label('roles[]', 'Roles') !!}

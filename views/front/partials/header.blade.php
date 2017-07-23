@@ -45,7 +45,7 @@
                                 <ul class="dropdown-menu">
                                     @if (Auth::user()->hasRole('Admin'))
                                     <li>
-                                        <a href="#0">
+                                        <a href="{{ route('users.index') }}">
                                             Administrar Usuarios
                                         </a>
                                     </li>
