@@ -4,9 +4,8 @@
 @endpush
 @section('content')
 @push('css')
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.3/summernote.css" rel="stylesheet">
-<style>
-.btn,.btn.active:focus,.btn:active:focus,.btn:focus,.btn:hover,a.btn,a.btn.active:focus,a.btn:active:focus,a.btn:focus,a.btn:hover{color:#000}body{background-color:#f0f0f0}.panel{border-radius:0}.btn,a.btn{white-space:inherit;display:inline-block;margin-right:0}section.p-y-md{min-height:506px}.blog-list{margin-bottom:0;padding-bottom:0;border-bottom:0}.form-group button{width:inherit}.form-group.note-group-select-from-files{display:none}</style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.3/summernote.css" rel="stylesheet">
+<style>.btn,.btn.active:focus,.btn:active:focus,.btn:focus,.btn:hover,a.btn,a.btn.active:focus,a.btn:active:focus,a.btn:focus,a.btn:hover{color:#000}body{background-color:#f0f0f0}.panel{border-radius:0}.btn,a.btn{white-space:inherit;display:inline-block;margin-right:0}section.p-y-md{min-height:506px}.blog-list{margin-bottom:0;padding-bottom:0;border-bottom:0}.form-group button{width:inherit}.form-group.note-group-select-from-files{display:none}</style>
 @endpush
 <section class="p-y-md">
 <div class="mainbody container">

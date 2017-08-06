@@ -225,41 +225,31 @@ labels: {!! json_encode($dates->map(function($date) { return $date->format('d/m'
     // You can switch between pie and douhnut using the method below.
     pieChart.Doughnut(PieData, pieOptions);
 
-
-
-    // Get context with jQuery - using jQuery's .get() method.
-    var pieChartCanvasN = $("#this_week_vs_last").get(0).getContext("2d");
-    var pieChartN = new Chart(pieChartCanvasN);
-    var PieDataN = {!! $toppages !!};
-    var pieOptionsN = {
-      //Boolean - Whether we should show a stroke on each segment
-      segmentShowStroke: true,
-      //String - The colour of each segment stroke
-      segmentStrokeColor: "#fff",
-      //Number - The width of each segment stroke
-      segmentStrokeWidth: 2,
-      //Number - The percentage of the chart that we cut out of the middle
-      percentageInnerCutout: 50, // This is 0 for Pie charts
-      //Number - Amount of animation steps
-      animationSteps: 100,
-      //String - Animation easing effect
-      animationEasing: "easeOutBounce",
-      //Boolean - Whether we animate the rotation of the Doughnut
-      animateRotate: true,
-      //Boolean - Whether we animate scaling the Doughnut from the centre
-      animateScale: false,
-      //Boolean - whether to make the chart responsive to window resizing
-      responsive: true,
-      // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-      maintainAspectRatio: true,
-      //String - A legend template
-      legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>"
+    //-------------
+    //- LINE CHART -
+    //--------------
+    var lineChartDataN = {
+    labels:  {!! json_encode($mobileInfo) !!} ,
+  
+      datasets: [
+        {
+          label: "Visitors",
+          fillColor: "rgba(60,141,188,0.9)",
+          strokeColor: "rgba(60,141,188,0.8)",
+          pointColor: "#3b8bba",
+          pointStrokeColor: "rgba(60,141,188,1)",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "rgba(60,141,188,1)",
+          data: {!! json_encode($mobile_sessions) !!}
+        }
+      ]
     };
-    //Create pie or douhnut chart
-    // You can switch between pie and douhnut using the method below.
-    pieChartN.Doughnut(PieDataN, pieOptionsN);
 
-
+    var lineChartCanvasN = $("#this_week_vs_last").get(0).getContext("2d");
+    var lineChartN = new Chart(lineChartCanvasN);
+    var lineChartOptionsN = areaChartOptions;
+    lineChartOptionsN.datasetFill = false;
+    lineChartN.Line(lineChartDataN, lineChartOptionsN);
 
 
 
