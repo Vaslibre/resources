@@ -24,19 +24,14 @@
                                     Nosotros
                                 </a>
                             </li>
-                            <li>
-                                <a href="#0">
-                                    Galería
+                           <li {{ ($current == 'archivos' ? 'class=active' : '') }} >
+                                <a href="{{ route('archivos') }}">
+                                    Archivos
                                 </a>
                             </li>
                             <li {{ ($current == 'notas' ? 'class=active' : '') }}>
                                 <a href="{{ route('notas') }}">
                                     Publicaciones
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="btn-nav btn-green smooth-scroll">
-                                    Contacto
                                 </a>
                             </li>
                             @if(Auth::check())
