@@ -8,11 +8,11 @@
     <ul class="w-comments">
     @foreach($friends as $friend)
         <li>
-            <i class="fa fa-link" aria-hidden="true"></i> 
-            Visita la web de: 
-            <a href="{{ $friend->url_site }}/?utm_source={{ config('app.name') }}&utm_medium=sidebar&utm_content=textlink">
+            <a 
+            href="{{ $friend->url_site }}/?utm_source={{ config('app.name') }}&utm_medium=sidebar&utm_content=textlink"
+            title="Clic para visitar {{ $friend->titulo }}">
                 {{ $friend->titulo }}
-            </a>
+            </a><i class="fa fa-external-link fa-fw" aria-hidden="true"></i>
         </li>        
     @endforeach
     </ul>

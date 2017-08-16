@@ -8,8 +8,9 @@
     <ul class="w-comments">
     @foreach ($popular as $post)
         <li>
-            <i class="fa fa-link" aria-hidden="true"></i>
-            <a href="{{ $post['url'] }}/?utm_source={{ config('app.name') }}&utm_medium=sidebar&utm_content=textlink">
+            <a 
+            href="{{ $post['url'] }}/?utm_source={{ config('app.name') }}&utm_medium=sidebar&utm_content=textlink"
+            title="Clic para leer más">
                 {{ $post['pageTitle'] }}
             </a>
         </li>        
