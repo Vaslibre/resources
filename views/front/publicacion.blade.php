@@ -5,7 +5,7 @@
 @endpush
 @section('content')
 @push('css')
-<style>.pagination-row{padding-bottom: 30px;}.disqus-placeholder.is-hidden{display:none;}</style>
+<style>.pagination-row{padding-bottom: 30px;}.disqus-placeholder.is-hidden{display:none;}.blog-list{border-bottom: transparent;}hr.pacman {border: 0;height: 25px;background-image: url('https://www.formget.com/wp-content/uploads/2014/12/type_3.png');background-repeat: no-repeat;background-position: center;}</style>
 @endpush
 <section class="p-y-md">
     <div class="container">
@@ -24,7 +24,9 @@
                             <li>
                                 <i class="fa fa-user"></i>
                                 Enviado por:
-                                <a href="#0">{{ $nota->user->name }}</a>
+                                <a href="{{ url('profile/'.$nota->user->nickname) }}">
+                                    {{ $nota->user->name }}
+                                </a>
                             </li>
                         </ul>
                         <blockquote class="quote-post">
@@ -33,6 +35,7 @@
                             </p>
                         </blockquote>
                         {!! $nota->texto !!}
+                        <hr class="pacman">
                     </div><br>
                     @include('front.partials.banner')
                 </div>

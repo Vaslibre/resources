@@ -1,38 +1,46 @@
 <!DOCTYPE html>
-<!--[if lte IE 9 ]> <html itemscope itemtype="http://schema.org/Blog" class="ie" lang="{{ app()->getLocale() }}"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html itemscope itemtype="http://schema.org/Blog" lang="{{ app()->getLocale() }}"><!--<![endif]-->
+<!--[if lte IE 9 ]> 
+<html itemscope itemtype="http://schema.org/Blog" class="ie" lang="{{ app()->getLocale() }}"> 
+<![endif]-->
+<!--[if (gt IE 9)|!(IE)]>
+<!--> 
+<html itemscope itemtype="http://schema.org/Blog" lang="{{ app()->getLocale() }}">
+<!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Vaslibre - @yield('title')</title>
-    <link rel="dns-prefetch" href="{{ route('home') }}"/>
-    <link rel="dns-prefetch" href="//www.gstatic.com"/>
-    <link rel="dns-prefetch" href="//fonts.gstatic.com"/>
-    <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
-    <link rel="dns-prefetch" href="//twemoji.maxcdn.com"/>
+    <meta http-equiv="imagetoolbar" content="no">
+    <meta http-equiv="pragma" content="cache">
+    <meta http-equiv="cache-control" content="cache">
+    <meta http-equiv="vary" content="content-language">
+    <meta http-equiv="Cache-control" content="max-age=2592000, public">
+    <meta http-equiv="content-style-type" content="text/css">    
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link href="{{ route('home') }}" rel="dns-prefetch"/>
+    <link href="https://www.gstatic.com"  rel="dns-prefetch"/>
+    <link href="https://fonts.gstatic.com " rel="dns-prefetch"/>
+    <link href="https://fonts.googleapis.com" rel="dns-prefetch"/>
     <link rel="shortcut icon" href="{{ asset('/favicon.ico') }}" type="image/x-icon">
     <link rel="icon" href="{{ asset('/favicon.ico') }}" type="image/x-icon">
-    <link rel="stylesheet" href="{{ asset('css/plugins/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/icons/iconfont.css') }}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/plugins/magnific-popup.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/plugins/owl.carousel.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/plugins/loaders.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/plugins/animate.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/plugins/pickadate-default.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/plugins/pickadate-default.date.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.5/sweetalert2.min.css" integrity="sha256-fmdDIg1KI3wbdH0gfFQGXexodQ3SQzBTHDGicLAgje8=" crossorigin="anonymous" />
+    <link href="{{ asset('css/plugins/bootstrap.min.css') }}"rel="stylesheet">
+    <link href="{{ asset('css/plugins/loaders.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/plugins/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.5/sweetalert2.min.css" integrity="sha256-fmdDIg1KI3wbdH0gfFQGXexodQ3SQzBTHDGicLAgje8=" crossorigin="anonymous" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/favicon-16x16.png') }}">
+    <link rel="icon" sizes="192x192" href="{{ asset('/apple-touch-icon.png') }}">
     <link rel="manifest" href="{{ asset('/manifest.json') }}">
     <link rel="mask-icon" href="{{ asset('/safari-pinned-tab.svg') }}" color="#5bbad5">
+    <link href="https://plus.google.com/+VaSlibre" rel="publisher">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="adblock" content="disable" />
     <meta name="wot-verification" content="bd1fa12c7dd952ea98e8" />
     <meta name="y_key" content="e6cb92c08209d989" />
@@ -46,19 +54,12 @@
     <meta name="geo.placename" content="Valencia" />
     <meta name="geo.position" content="10.181808;-68.004684" />
     <meta name="ICBM" content="10.181808, -68.004684" />
-    <link rel="openid.server" href="http://openid.es/index.php/serve" />
-    <link rel="openid.delegate" href="http://vaslibre.openid.es" />
+    <meta name="google" content="notranslate">
     <meta name="keywords" content="Valencia, software libre, linux, Venezuela, Carabobo, vaslibre, gnu, glove, solve, GNU/Linux, open, source, open source, ponencias, articulos, eventos, Techlan, FliSol, glove, cnsl, distros, distribuciones, gnu/linux, ubuntu, debian, fedora, geento, opensuse" />
     <meta name="theme-color" content="#ffffff">
     <meta name="keywords" content="">
     <meta name="author" content="Angel Cruz <me@abr4xas.org>">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta http-equiv="imagetoolbar" content="no">
-    <meta http-equiv="pragma" content="cache">
-    <meta http-equiv="cache-control" content="cache">
-    <meta http-equiv="vary" content="content-language">
-    <meta http-equiv="Cache-control" content="max-age=2592000, public">
-    <meta http-equiv="content-style-type" content="text/css">
+    <meta name="norton-safeweb-site-verification" content="7p-ydp7smpvwo44a5to-rrbe9z0fem0gyueagbgmvlkav08rd3l9gtnpctwtwca--wwj26si8tux0asfgb2n3iiugkrj3peo05dt390wmrm1483sh7wm0rp4vhsnyjf2" />
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320"/>
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -70,12 +71,13 @@
     <meta name="revisit-after" content="1 days">
     <meta name="revisit" content="1">
     <meta name="robots" content="index,follow">
-    <meta name="no-email-collection" content="http://www.unspam.com/noemailcollection/">
+    <meta name="no-email-collection" content="https://www.unspam.com/noemailcollection/">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@vaslibre">
+    <meta name="publisuites-verify-code" content="aHR0cHM6Ly92YXNsaWJyZS5vcmcudmU=" />
     <meta property="og:site_name" content="Vaslibre">
     <meta property="og:locale" content="{{ app()->getLocale() }}">
-    <link rel="alternate" href="http://feeds.feedburner.com/Vaslibre" title="My RSS feed" type="application/rss+xml" />
+    <link rel="alternate" href="https://feeds.feedburner.com/Vaslibre" title="Feed de {{ config('app.name') }}" type="application/rss+xml" />
     @stack('metas')
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>

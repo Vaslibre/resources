@@ -49,15 +49,7 @@
                     </div>                   
                 </div>
                 @include('front.partials.widgets.friends')
-                <div class="widget">
-                    <div class="w-title">
-                        <h5 class="m-b-md">
-                            archivos
-                        </h5>
-                        <hr>
-                    </div>
-                    @include('front.partials.widgets.archives')
-                </div>
+                @include('front.partials.widgets.popular')
                 <div class="widget">
                     <div class="w-title">
                         <h5 class="m-b-md">
