@@ -85,7 +85,7 @@
     <![endif]-->
     @stack('css')
     @if(!Auth::check())
-    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-105362446-1', 'auto');ga('send', 'pageview');</script>
+    {{--  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-105362446-1', 'auto');ga('send', 'pageview');</script>  --}}
     @endif
     <style>.footer a{color:#fff;}.btn,a.btn{white-space:inherit;}</style>
 
@@ -110,7 +110,10 @@
                                 <img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" />
                             </a>
                             <br />Esta obra está bajo una
-                            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"> Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional</a>
+                            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"> Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional</a><br>
+                            <a href="http://es.paperblog.com/?utm_source=VaSLibre&utm_medium=footer&utm_content=textlink" target="_blank" rel="paperblog abr4xas" title="Paperblog : Los mejores artículos de los blogs">
+                                <img src="http://m1.paperblog.com/assets/images/logos/minilogo.png" border="0" alt="Paperblog" />
+                            </a>
                         </p>
                     </div>
                 </div><!-- /End Row -->

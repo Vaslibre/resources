@@ -38,7 +38,7 @@
                         </div>
                     </div>
                 </div>
-                @include('front.partials.banner')
+                {{--  @include('front.partials.banner')  --}}
             </div>
             <div class="col-md-4">
                 @include('front.partials.widgets.widgets')
