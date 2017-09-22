@@ -1,84 +1,89 @@
 @extends('layouts.front')
 
-@section('title', 'Google Analytics')
-@push('css')
-
-@endpush
 @section('content')
-<section class="page-head bg-img text-white p-y-md" style="background-image:url('{{ asset('/images/bg/background.jpg') }}')">
-    <div class="container">
-        <div class="row c2 h-bg">
-            <div class="col-sm-6">
-                <h1 class="h3 f-w-900 m-b-0">Google Analytics</h1>
-            </div>
-            <div class="col-sm-6 text-right text-capitalize text-white">
-                <ol class="breadcrumb">
-                    <li><a href="{{ route('admin.home') }}">Admin Home</a></li>
-                    <li class="active">Google Analytics</li>
-                </ol>
-            </div>
-        </div>
-    </div>
-</section>
 <section class="p-t-lg p-y-md">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="box box-primary">
-                    <div class="page-header with-border">
-                        <h3 class="box-title">Visitor y vista de página</h3>
-                    </div>
-                    <div class="box-body">
-                        <div class="chart">
-                            <canvas id="areaChart" style="height:250px"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="box box-danger">
-                    <div class="page-header with-border">
-                        <h3 class="box-title">Top Navegadores</h3>
-                    </div>
-                    <div class="box-body">
-                        <canvas id="pieChart" style="height:250px"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <hr>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="box box-info">
-                    <div class="page-header with-border">
-                        <h3 class="box-title">Top País</h3>
-                    </div>
-                    <div class="box-body">
-                        <div class="chart">
-                            <canvas id="lineChart" style="height:250px"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="box box-success">
-                    <div class="page-header with-border">
-                        <h3 class="box-title">Páginas Visitadas</h3>
-                    </div>
-                    <div class="box-body">
-                        <div class="chart">
-                            <canvas id="this_week_vs_last"></canvas>
-                            <div id="this_week_vs_last_legend" class="chart-legend"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      @include('googleanalytics::inc.usertable')
     </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <!-- AREA CHART -->
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Visitor and Page View</h3>
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+          </div>
+        </div>
+        <div class="box-body">
+          <div class="chart">
+            <canvas id="areaChart" style="height:250px"></canvas>
+          </div>
+        </div><!-- /.box-body -->
+      </div><!-- /.box -->
+
+      <!-- DONUT CHART -->
+      <div class="box box-danger">
+        <div class="box-header with-border">
+          <h3 class="box-title">Browser</h3>
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+          </div>
+        </div>
+        <div class="box-body">
+          <canvas id="pieChart" style="height:250px"></canvas>
+        </div><!-- /.box-body -->
+      </div><!-- /.box -->
+    </div><!-- /.col (LEFT) -->
+    <div class="col-md-6">
+      <!-- LINE CHART -->
+      <div class="box box-info">
+        <div class="box-header with-border">
+          <h3 class="box-title">Country</h3>
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+          </div>
+        </div>
+        <div class="box-body">
+          <div class="chart">
+            <canvas id="lineChart" style="height:250px"></canvas>
+          </div>
+        </div><!-- /.box-body -->
+      </div><!-- /.box -->
+      <!-- BAR CHART -->
+      <div class="box box-success">
+        <div class="box-header with-border">
+          <h3 class="box-title">Visitor and Page View</h3>
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+          </div>
+        </div>
+        <div class="box-body">
+          <div class="chart">
+            <canvas id="barChart" style="height:230px"></canvas>
+          </div>
+        </div><!-- /.box-body -->
+      </div><!-- /.box -->
+    </div><!-- /.col (RIGHT) -->
+  </div><!-- /.row -->
+</div>
 </section>
+@php
+//dd($p_and_v_dates);
+@endphp
+
 @endsection
+
 @push('script')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.1.1/Chart.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.1.1/Chart.min.js"></script>
 <script>
   $(function () {
     /* ChartJS
@@ -96,7 +101,7 @@
     var areaChart = new Chart(areaChartCanvas);
 
     var areaChartData = {
-labels: {!! json_encode($dates->map(function($date) { return $date->format('d/m'); })) !!},
+      labels: {!! json_encode($dates->map(function($date) { return $date->format('d/m'); })) !!},
   
       datasets: [
         {
@@ -226,33 +231,45 @@ labels: {!! json_encode($dates->map(function($date) { return $date->format('d/m'
     pieChart.Doughnut(PieData, pieOptions);
 
     //-------------
-    //- LINE CHART -
-    //--------------
-    var lineChartDataN = {
-    labels:  {!! json_encode($mobileInfo) !!} ,
-  
-      datasets: [
-        {
-          label: "Visitors",
-          fillColor: "rgba(60,141,188,0.9)",
-          strokeColor: "rgba(60,141,188,0.8)",
-          pointColor: "#3b8bba",
-          pointStrokeColor: "rgba(60,141,188,1)",
-          pointHighlightFill: "#fff",
-          pointHighlightStroke: "rgba(60,141,188,1)",
-          data: {!! json_encode($mobile_sessions) !!}
-        }
-      ]
+    //- BAR CHART -
+    //-------------
+    var barChartCanvas = $("#barChart").get(0).getContext("2d");
+    var barChart = new Chart(barChartCanvas);
+    var barChartData = areaChartData;
+    barChartData.datasets[1].fillColor = "#00a65a";
+    barChartData.datasets[1].strokeColor = "#00a65a";
+    barChartData.datasets[1].pointColor = "#00a65a";
+    var barChartOptions = {
+      //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
+      scaleBeginAtZero: true,
+      //Boolean - Whether grid lines are shown across the chart
+      scaleShowGridLines: true,
+      //String - Colour of the grid lines
+      scaleGridLineColor: "rgba(0,0,0,.05)",
+      //Number - Width of the grid lines
+      scaleGridLineWidth: 1,
+      //Boolean - Whether to show horizontal lines (except X axis)
+      scaleShowHorizontalLines: true,
+      //Boolean - Whether to show vertical lines (except Y axis)
+      scaleShowVerticalLines: true,
+      //Boolean - If there is a stroke on each bar
+      barShowStroke: true,
+      //Number - Pixel width of the bar stroke
+      barStrokeWidth: 2,
+      //Number - Spacing between each of the X value sets
+      barValueSpacing: 5,
+      //Number - Spacing between data sets within X values
+      barDatasetSpacing: 1,
+      //String - A legend template
+      legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].fillColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>",
+      //Boolean - whether to make the chart responsive
+      responsive: true,
+      maintainAspectRatio: true
     };
 
-    var lineChartCanvasN = $("#this_week_vs_last").get(0).getContext("2d");
-    var lineChartN = new Chart(lineChartCanvasN);
-    var lineChartOptionsN = areaChartOptions;
-    lineChartOptionsN.datasetFill = false;
-    lineChartN.Line(lineChartDataN, lineChartOptionsN);
-
-
-
+    barChartOptions.datasetFill = false;
+    barChart.Bar(barChartData, barChartOptions);
   });
 </script>
 @endpush
+

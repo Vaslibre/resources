@@ -54,11 +54,6 @@
                                             Manage Roles & Permissions
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="{{ route('admin.analytics') }}">
-                                            Google Analytics
-                                        </a>
-                                    </li>
                                     @endif
                                     @if (Auth::user()->can('add_post', 'edit_post'))
                                     <li>
@@ -72,7 +67,7 @@
                                         <a href="{{ url('profile/'.Auth::user()->nickname) }}">
                                             Mi perfil
                                         </a>
-                                    </li>                                  
+                                    </li>
                                     @endif
                                     <li>
                                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -83,9 +78,13 @@
                                         </form>
                                     </li>
                                 </ul>
-                            </li>                                
+                            </li>
+
+                                @if (Auth::user()->hasRole('Admin'))
+                                @include('front.partials.googleanalytics-menu')
+                                @endif
                             @endif
-                        </ul>                       
+                        </ul>
                     </div>
                 </div>
             </nav>

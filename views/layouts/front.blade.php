@@ -85,12 +85,10 @@
     <![endif]-->
     @stack('css')
     @if(!Auth::check())
-    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-8727599-3', 'auto');
-    ga('send', 'pageview');
-    </script>
+{{--  <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-105362446-1', 'auto');ga('send', 'pageview');</script>  --}}
     @endif
     <style>.footer a{color:#fff;}.btn,a.btn{white-space:inherit;}</style>
+
 </head>
 <body data-spy="scroll" data-target="#main-navbar">
     <div class="loader bg-white">
@@ -120,12 +118,14 @@
         </footer>
         <a href="#" class="top btn-green">Top</a>
     </div>
+
     <script src="{{ asset('js/plugins/jquery1.11.2.min.js') }}"></script>
     <script src="{{ asset('js/plugins/bootstrap.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js" integrity="sha256-RWiU4omUU7tQ2M3wmRQNW9UL50MB4CucbRPCbsQv+X0=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.5/sweetalert2.min.js" integrity="sha256-xofl41Tt0WRg2Q0LrntvSB6qv1Mzz/ZLvSyi+O08d1g=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.6/sweetalert2.min.js" integrity="sha256-NBMm26+MVgnPpBR/jdmM0orRevP7j26HoHC3IPW/T+k=" crossorigin="anonymous"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
+
     <script>
         jQuery(document).ready(function($) {
             var engine = new Bloodhound({
