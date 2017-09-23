@@ -12,7 +12,6 @@
             </div>
             <div class="col-sm-6 text-right text-capitalize text-white">
                 <ol class="breadcrumb">
-                    <li><a href="{{ route('admin.home') }}">Admin Home</a></li>
                     <li><a href="{{ route('users.index') }}">user list</a></li>
                     <li class="active">create user</li>
                 </ol>

@@ -56,6 +56,16 @@
                                 </a>
                             </li>
                             <li>
+                                <a href="{{ route('banner.index') }}">
+                                    Administrar Banner
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#0">
+                                    Administrar Blogroll
+                                </a>
+                            </li>
+                            <li>
                                 <a href="{{ route('roles.index') }}">
                                     Manage Roles & Permissions
                                 </a>

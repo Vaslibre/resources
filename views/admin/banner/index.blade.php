@@ -1,65 +1,58 @@
 @extends('layouts.front')
 
-@section('title', 'Users')
+@section('title', 'Banner')
 
 @section('content')
 <section class="page-head bg-img text-white p-y-md" style="background-image:url('{{ asset('/images/bg/background.jpg') }}')">
     <div class="container">
         <div class="row c2 h-bg">
             <div class="col-sm-6">
-                <h1 class="h3 f-w-900 m-b-0">manage your users</h1>
+                <h1 class="h3 f-w-900 m-b-0">Administrar banners</h1>
             </div>
             <div class="col-sm-6 text-right text-capitalize text-white">
                 <ol class="breadcrumb">
-                    <li class="active">user list</li>
+                    <li class="active">Administrar Banners</li>
                 </ol>
             </div>
         </div>
     </div>
 </section>
-<section class="p-t-lg p-y-md">
+<section class="p-t p-y">
     <div class="container">
         <div class="row">
-            <div class="col-md-5">
-                <h3 class="modal-title">{{ $result->total() }} {{ str_plural('User', $result->count()) }} </h3>
+            <div class="col-md-10">
+                <h3>
+                    Listado de banners registrados
+                </h3>
             </div>
-            {{--  <div class="col-md-7 page-action text-right">
-                @can('add_users')
-                    <a href="{{ route('users.create') }}" class="btn btn-primary btn-sm"> <i class="glyphicon glyphicon-plus-sign"></i> Create</a>
-                @endcan
-            </div>  --}}
+            <div class="col-md-2 page-action text-right">
+                <a href="{{ route('banner.create') }}" class="btn btn-primary btn-sm"> 
+                    Agregar Banner
+                </a>
+            </div>
             <div class="col-md-12">
                 <div class="result-set">
                     <table class="table table-bordered table-striped table-hover" id="data-table">
                         <thead>
                         <tr>
-                            <th>Id</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Role</th>
-                            <th>Created At</th>
-                            @can('edit_users', 'delete_users')
+                            <th>Titulo</th>
+                            <th>Url Site</th>
+                            <th>Url Banner</th>
                             <th class="text-center">Actions</th>
-                            @endcan
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($result as $item)
                             <tr>
-                                <td>{{ $item->id }}</td>
-                                <td>{{ $item->name }}</td>
-                                <td>{{ $item->email }}</td>
-                                <td>{{ $item->roles->implode('name', ', ') }}</td>
-                                <td>{{ $item->created_at->toFormattedDateString() }}</td>
-
-                                @can('edit_users')
+                                <td>{{ $item->titulo }}</td>
+                                <td>{{ $item->url_site }}</td>
+                                <td>{{ $item->url_banner }}</td>
                                 <td class="text-center">
-                                    @include('admin.shared._actions', [
-                                        'entity' => 'users',
+                                    @include('admin.banner.partials._actions', [
+                                        'entity' => 'banner',
                                         'id' => $item->id
                                     ])
                                 </td>
-                                @endcan
                             </tr>
                         @endforeach
                         </tbody>
@@ -69,7 +62,7 @@
                         {{ $result->links() }}
                     </div>
                 </div>
-            </div>    
+            </div>              
         </div>
     </div>
 </section>

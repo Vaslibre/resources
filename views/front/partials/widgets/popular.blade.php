@@ -1,7 +1,8 @@
+@if($popular)
 <div class="widget">
     <div class="w-title">
         <h5>
-            publicaciones populares
+            lo más leído
         </h5>
         <hr>
     </div>
@@ -16,4 +17,5 @@
         </li>        
     @endforeach
     </ul>
-</div>
+</div>    
+@endif

@@ -1,5 +1,6 @@
 @extends('layouts.front')
 
+@section('title', 'Registro')
 @section('content')
 <section id="login" class="login p-y-lg bg-color">
     <div class="container">
@@ -63,7 +64,7 @@
                     </div>
                 </form>
                 <p class="terms m-t">By clicking Signup you agree to the <a href="#0" class="f-w-700">Terms</a> and <a href="" class="f-w-700">Privacy Policy</a>.</p>
-                <p class="terms"> Already have a GetLeads account? <a href="#0" class="f-w-700">Sign in</a>.</p>
+                <p class="terms"> Ya tienes una cuenta en {{ config('app.name') }}? Ve a <a href="{{ url('/login') }}" class="f-w-700">iniciar sesión</a>.</p>
             </div>
         </div>
     </div>

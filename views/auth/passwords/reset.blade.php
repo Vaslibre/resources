@@ -5,6 +5,17 @@
 
 <section id="login" class="login p-y-lg bg-color">
     <div class="container">
+
+            @if (count($errors) > 0)
+                <div class="alert alert-danger p-y">
+                    <strong>Whoops!</strong><br><br>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif   
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4 text-center subscription">
             @if (session('status'))

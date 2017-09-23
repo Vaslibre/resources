@@ -1,4 +1,6 @@
 @extends('layouts.front')
+
+@section('title', 'Recueperar contraseña')
 @push('css')
 <style>.btn, a.btn {    white-space: inherit; }</style>
 @endpush

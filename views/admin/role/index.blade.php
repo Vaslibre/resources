@@ -11,7 +11,7 @@
             </div>
             <div class="col-sm-6 text-right text-capitalize text-white">
                 <ol class="breadcrumb">
-                    <li><a href="{{ route('admin.home') }}">Admin Home</a></li>
+                    <li><a href="">Admin Home</a></li>
                     <li class="active">Roles & Permissions</li>
                 </ol>
             </div>
