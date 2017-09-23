@@ -1,5 +1,5 @@
 @extends('layouts.front')
-@section('title','El perfil de ' . $result->name)
+@section('title','El perfil de ' . ucwords($result->name))
 @push('metas')
 {{-- @include('front.partials.meta') --}}
 @endpush
@@ -26,6 +26,11 @@ body{background-color:#f0f0f0;}.panel{border-radius:0;}.btn,a.btn{white-space:in
                     </div>
                 </div>
             </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    @include('front.partials.widgets.popular')
+                </div>
+            </div>
         </div>
         <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
             <div class="panel panel-default blog-post">
@@ -34,13 +39,13 @@ body{background-color:#f0f0f0;}.panel{border-radius:0;}.btn,a.btn{white-space:in
                         <h1 class="panel-title pull-left" style="font-size:30px;">
                             {{ $result->name }}
                         </h1>
-                    @if(Auth::check() && Auth::user()->id == $result->id)
+                        @if(Auth::check() && Auth::user()->id == $result->id)
                         <div class="btn-group pull-right" role="group" aria-label="...">
                             <a href="{{ route('profile.edit', $result->nickname) }}" type="button"  class="btn btn-success text-capitalize">
                                 editar perfil
                             </a>
                         </div>
-                    @endif                        
+                        @endif                        
                     </span>
                     @if(!empty($result->bio))
                     <blockquote class="quote-post">
@@ -52,7 +57,6 @@ body{background-color:#f0f0f0;}.panel{border-radius:0;}.btn,a.btn{white-space:in
                     <hr>
                     <ul class="list-inline">
                         <li>Miembro desde: {{ $result->created_at->format('Y') }}</li>
-                        <li>{{ count($result->notas) }} publicaciones hasta la fecha</li>
                     </ul>
                 </div>
             </div>
@@ -66,7 +70,7 @@ body{background-color:#f0f0f0;}.panel{border-radius:0;}.btn,a.btn{white-space:in
                 <div class="panel panel-default">
                     <div class="panel-body clearfix">
                     @if(Auth::check() && Auth::user()->id == $result->id)
-                        <div class="btn-group pull-right" role="group" aria-label="...">
+                        <div class="btn-group pull-right" role="group">
                             <a href="{{ route('post.edit', $item->id) }}" type="button" class="btn btn-success text-capitalize">
                                 editar publicación
                             </a>

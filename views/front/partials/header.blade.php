@@ -61,7 +61,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#0">
+                                <a href="{{ route('blogroll.index') }}">
                                     Administrar Blogroll
                                 </a>
                             </li>

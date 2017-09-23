@@ -1,7 +1,7 @@
 <div class="blog-list">    
     <div class="blog-post">
         <h4 class="post-title">
-            <a href="{{ route($url, $item->url) }}">
+            <a href="{{ $item->publicado == 0 ? '#0' : route($url, $item->url) }}">
                 {{ $item->titulo }}
             </a>
         </h4>
