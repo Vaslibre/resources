@@ -51,7 +51,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#0">
+                                <a href="{{ url('admin/post') }}">
                                     Administrar Blog
                                 </a>
                             </li>

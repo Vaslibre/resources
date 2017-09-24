@@ -56,7 +56,7 @@ body{background-color:#f0f0f0;}.panel{border-radius:0;}.btn,a.btn{white-space:in
                     @endif
                     <hr>
                     <ul class="list-inline">
-                        <li>Miembro desde: {{ $result->created_at->format('Y') }}</li>
+                        <li>Miembro desde {{ $result->created_at->diffForHumans() }}.</li>
                     </ul>
                 </div>
             </div>

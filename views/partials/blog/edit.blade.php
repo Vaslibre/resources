@@ -1,5 +1,5 @@
 @extends('layouts.front')
-@section('title','Crear un nuevo post')
+@section('title','Editar Publicación')
 @push('metas')
 @endpush
 @section('content')

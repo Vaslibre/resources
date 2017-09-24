@@ -15,7 +15,7 @@
             </li>
             <li class="text-edit">
                 <i class="fa fa-clock-o" aria-hidden="true"></i> 
-                {{ $item->created_at->format('d M Y') }}
+                {{ $item->created_at->diffForHumans() }}
             </li>
         </ul>
         <p>{!! $item->intro !!}</p>
