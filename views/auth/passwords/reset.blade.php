@@ -27,6 +27,7 @@
                 <p class="lead text-left center-md m-b-md">coloca tus datos</p>
                 <form class="form-horizontal" role="form" method="POST" action="{{ route('password.request') }}">
                         {{ csrf_field() }}
+                        <input type="hidden" name="token" value="{{ $token }}">
                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                         <label for="sfEmail" class="">Email</label>
                         <input id="email" type="email" class="form-control" name="email" value="{{ $email or old('email') }}" required autofocus>
