@@ -17,7 +17,7 @@
                     <tr>
                         <td >{{ $key  }}</td>
                         <td>New Visitor</td>
-                        <td>{{ $item[0]['visitors'] }}</td>
+                        <td>{{ !empty($item[0]['visitors']) ? $item[0]['visitors'] : 0 }}</td>
                     </tr>
                 @endforeach
                 </table> 
