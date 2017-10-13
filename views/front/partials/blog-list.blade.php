@@ -1,5 +1,17 @@
 <div class="blog-list">    
     <div class="blog-post">
+        @member($item->user->id)
+            <div class="btn-group pull-right" role="group">
+                <a href="{{ route('post.edit', $item->id) }}" type="button" class="btn btn-success text-capitalize">
+                    editar publicación
+                </a>
+                @if($item->publicado == false)
+                    <button type="button" class="btn btn-warning text-capitalize">
+                        no publicado
+                    </button>
+                @endif
+            </div>
+        @endmember
         <h4 class="post-title">
             <a href="{{ $item->publicado == 0 ? '#0' : route($url, $item->url) }}">
                 {{ $item->titulo }}

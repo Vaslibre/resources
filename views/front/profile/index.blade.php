@@ -16,13 +16,13 @@ body{background-color:#f0f0f0;}.panel{border-radius:0;}.btn,a.btn{white-space:in
                 <div class="panel-body">
                     <div class="media">
                         <img class="img-responsive" src="@myGravatar($result->email, ['s'=> 300, 'd'=>'mm', 'secure' => true])">
-                        @if(Auth::check() && Auth::user()->id == $result->id)
+                        @member($result->id)
                         <br>
                         <small class="mt">
                             Cambia esta imagen en:
                             <a href="http://gravatar.com" target="_blank">gravatar.com</a>
                         </small>
-                        @endif
+                        @endmember
                     </div>
                 </div>
             </div>
@@ -39,13 +39,13 @@ body{background-color:#f0f0f0;}.panel{border-radius:0;}.btn,a.btn{white-space:in
                         <h1 class="panel-title pull-left" style="font-size:30px;">
                             {{ $result->name }}
                         </h1>
-                        @if(Auth::check() && Auth::user()->id == $result->id)
+                        @member($result->id)
                         <div class="btn-group pull-right" role="group" aria-label="...">
                             <a href="{{ route('profile.edit', $result->nickname) }}" type="button"  class="btn btn-success text-capitalize">
                                 editar perfil
                             </a>
                         </div>
-                        @endif                        
+                        @endmember
                     </span>
                     @if(!empty($result->bio))
                     <blockquote class="quote-post">
@@ -62,25 +62,13 @@ body{background-color:#f0f0f0;}.panel{border-radius:0;}.btn,a.btn{white-space:in
             </div>
             <hr>
             @foreach($notas as $item)
-                @if(!Auth::check() || !Auth::user()->id == $result->id)
+                @guest($result->id)
                     @if($item->publicado == 0)
                         @continue;
                     @endif
-                @endif
+                @endguest
                 <div class="panel panel-default">
                     <div class="panel-body clearfix">
-                    @if(Auth::check() && Auth::user()->id == $result->id)
-                        <div class="btn-group pull-right" role="group">
-                            <a href="{{ route('post.edit', $item->id) }}" type="button" class="btn btn-success text-capitalize">
-                                editar publicación
-                            </a>
-                        @if($item->publicado == false)
-                            <button type="button" class="btn btn-warning text-capitalize">
-                                no publicado
-                            </button>
-                        @endif
-                        </div>
-                    @endif
                     @include('front.partials.blog-list', ['item' => $item, 'url' => 'blog'])
                     </div>
                 </div>
